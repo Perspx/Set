@@ -18,6 +18,7 @@ public struct Set<Element : Hashable> {
 		self.init(values: [Element: Unit](minimumCapacity: minimumCapacity))
 	}
 
+
 	/// The number of entries in the set.
 	public var count: Int { return values.count }
 
@@ -25,6 +26,7 @@ public struct Set<Element : Hashable> {
 	public var isEmpty: Bool {
 		return self.values.isEmpty
 	}
+
 
 	public func contains(element: Element) -> Bool {
 		return values[element] != nil
