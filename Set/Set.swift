@@ -86,8 +86,9 @@ extension Set : ExtensibleCollectionType {
 	
 	/// Inserts each element of \c sequence into the receiver.
 	public mutating func extend<S : SequenceType where S.Generator.Element == Element>(sequence: S) {
-		// Note that this should just be for each in sequence; this is working around a compiler crasher.
-		for each in [Element](sequence) {
+		// Note that this should just be for each in sequence; this is working around a compiler bug.
+		let s = SequenceOf<Element>({ sequence.generate() })
+		for each in s {
 			insert(each)
 		}
 	}
