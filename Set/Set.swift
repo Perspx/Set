@@ -121,6 +121,7 @@ public func == <Element : Hashable> (a: Set<Element>, b: Set<Element>) -> Bool {
 
 /// Set is reducible.
 extension Set {
+	/// Left reduce.
 	public func reduce<Into>(initial: Into, combine: (Into, Element) -> Into) -> Into {
 		return Swift.reduce(self, initial, combine)
 	}
