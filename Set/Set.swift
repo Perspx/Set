@@ -36,6 +36,9 @@ public struct Set<Element : Hashable> {
 	}
 
 
+	/// Initialize a Set with a dictionary of elements to unit.
+	///
+	/// For the private use of the other initializers.
 	private init(values: [Element: Unit]) {
 		self.values = values
 	}
