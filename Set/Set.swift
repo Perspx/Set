@@ -18,7 +18,7 @@ public struct Set<Element : Hashable> {
 	/// The number of entries in the set.
 	public var count: Int { return values.count }
 
-	/// True iff `count == 0`
+	/// True iff `count == 0`.
 	public var isEmpty: Bool {
 		return self.values.isEmpty
 	}
