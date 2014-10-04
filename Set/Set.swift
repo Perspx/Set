@@ -3,16 +3,16 @@
 /// A set of unique elements.
 public struct Set<Element : Hashable> {
 	public init<S : SequenceType where S.Generator.Element == Element>(_ sequence: S) {
-		self.values = [:]
+		self.init(values: [:])
 		extend(sequence)
 	}
 	
 	public init() {
-		self.values = [:]
+		self.init(values: [:])
 	}
 	
 	public init(minimumCapacity: Int) {
-		self.values = [Element:Unit](minimumCapacity: minimumCapacity)
+		self.init(values: [Element: Unit](minimumCapacity: minimumCapacity))
 	}
 
 	/// The number of entries in the set.
@@ -43,7 +43,7 @@ public struct Set<Element : Hashable> {
 		self.values = values
 	}
 
-	private var values: [Element: Unit]
+	private var values = [Element: Unit]()
 }
 
 
