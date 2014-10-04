@@ -35,7 +35,7 @@ public struct Set<Element : Hashable> {
 		values.removeValueForKey(element)
 	}
 
-	private var values: [Element:Unit]
+	private var values: [Element: Unit]
 }
 
 
