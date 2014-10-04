@@ -2,15 +2,18 @@
 
 /// A set of unique elements.
 public struct Set<Element : Hashable> {
+	/// Initializes with the elements of `sequence`.
 	public init<S : SequenceType where S.Generator.Element == Element>(_ sequence: S) {
 		self.init(values: [:])
 		extend(sequence)
 	}
-	
+
+	/// Initializes an empty set.
 	public init() {
 		self.init(values: [:])
 	}
-	
+
+	/// Initializes an empty set with at least `minimumCapacity` worth of storage.
 	public init(minimumCapacity: Int) {
 		self.init(values: [Element: Unit](minimumCapacity: minimumCapacity))
 	}
